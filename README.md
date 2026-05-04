@@ -1,6 +1,6 @@
-# Praxis
+# Arete
 
-> *Greek — practice, the act of doing.*
+> *Ancient Greek — αρετή — excellence; the full realisation of potential, applied equally to body, mind, and craft.*
 > Personal AI training, nutrition & recovery system. Built for one user, anatomically grounded, research-cited, runs on a laptop and a phone.
 
 [![Built with Claude](https://img.shields.io/badge/Built%20with-Claude%20Opus-D97757?logo=anthropic&logoColor=white)](https://www.anthropic.com)
@@ -17,7 +17,7 @@ Off-the-shelf fitness apps treat every user identically. They don't know my macr
 
 So I built the system that knows me.
 
-**Praxis** is a single FastAPI process serving a Next.js PWA over LAN that combines:
+**Arete** is a single FastAPI process serving a Next.js PWA over LAN that combines:
 
 - A **pattern-based injury filter** — 25 anatomy-aware movement-pattern tags drive automatic swap / reduce / drop / cue decisions across the entire week's plan when an injury is toggled on
 - A **RAG-grounded coach** — Claude / Gemini via OpenRouter, retrieving from a curated 27-article wiki using hybrid BM25 + cosine over local MiniLM embeddings, every answer cited
@@ -40,7 +40,7 @@ Three intertwined personalisation problems that no consumer app solves at once:
 
 **3. Grounded reasoning.** When the coach answers "should I deload?", it should cite specific passages from a curated wiki of training/nutrition/recovery research, not hallucinate from training-data memory.
 
-Every consumer app I tried solves zero of these. Praxis solves all three.
+Every consumer app I tried solves zero of these. Arete solves all three.
 
 ---
 
@@ -148,7 +148,7 @@ Each stage is explained for the layperson, then for the engineer.
 ## Project structure
 
 ```
-praxis/
+arete/
 ├── apps/web/                          Next.js 14 PWA — laptop + phone layouts
 │   ├── app/                           routes (single-page)
 │   ├── components/
@@ -239,7 +239,7 @@ The system isn't generic gym advice. Every recommendation has a paper or coach b
 
 ## A note on scope
 
-Praxis is built **for one user** — me — and that's the point. It encodes my training environment (Hart House), my food sources (Toronto FreshCo + Costco), my body (96 → 82 kg cut), my injury history (medial elbow, with rehab plan), my coach preferences (Israetel/Nippard/CBum methodology), my schedule (Mon/Tue/Thu/Fri training).
+Arete is built **for one user** — me — and that's the point. It encodes my training environment (Hart House), my food sources (Toronto FreshCo + Costco), my body (96 → 82 kg cut), my injury history (medial elbow, with rehab plan), my coach preferences (Israetel/Nippard/CBum methodology), my schedule (Mon/Tue/Thu/Fri training).
 
 This is also why it ships: there are no edge cases I didn't think about, because every edge case is mine.
 
