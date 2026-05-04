@@ -1,0 +1,1427 @@
+{
+  "schema_version": 1,
+  "description": "Citation registry (rebuilt from salvage).",
+  "last_updated": "2026-05-03",
+  "aliases": {
+    "helms": "helms_pyramid_nutrition",
+    "mass": "mass_sbs_synthesis"
+  },
+  "needs_tier_review": [],
+  "citations": {
+    "3dmj-hypertrophy": {
+      "id": "3dmj-hypertrophy",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "aafp_lumps": {
+      "id": "aafp_lumps",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "aafp_pilonidal": {
+      "id": "aafp_pilonidal",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "ahmad2010veo": {
+      "id": "ahmad2010veo",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "andersen-2014": {
+      "id": "andersen-2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "aragon2017": {
+      "id": "aragon2017",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "aragon_schoenfeld": {
+      "id": "aragon_schoenfeld",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "auntminnie_weightlifter": {
+      "id": "auntminnie_weightlifter",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "avgerinos2018": {
+      "id": "avgerinos2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "aworkout_skulls": {
+      "id": "aworkout_skulls",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "barbellrehab_bench": {
+      "id": "barbellrehab_bench",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "barbellrehab_lbp": {
+      "id": "barbellrehab_lbp",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "baz-valle-2022-volume": {
+      "id": "baz-valle-2022-volume",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bazvalle-2022-volume": {
+      "id": "bazvalle-2022-volume",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bbm-csr": {
+      "id": "bbm-csr",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bbm_knees": {
+      "id": "bbm_knees",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bbm_painrules": {
+      "id": "bbm_painrules",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bbm_prehab": {
+      "id": "bbm_prehab",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "beardsley-lat": {
+      "id": "beardsley-lat",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "beaudart2014": {
+      "id": "beaudart2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "behm2016stretch": {
+      "id": "behm2016stretch",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bell2024_practical": {
+      "id": "bell2024_practical",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bhutani": {
+      "id": "bhutani",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bhutani2017": {
+      "id": "bhutani2017",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bia_review": {
+      "id": "bia_review",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bjsm_lbp_2018": {
+      "id": "bjsm_lbp_2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bmjbp_pilonidal": {
+      "id": "bmjbp_pilonidal",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bmjbp_softtissue": {
+      "id": "bmjbp_softtissue",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bodywater": {
+      "id": "bodywater",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "bouzari2015": {
+      "id": "bouzari2015",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "buchheit2014": {
+      "id": "buchheit2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "campbell2020": {
+      "id": "campbell2020",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "canadianmri_costs": {
+      "id": "canadianmri_costs",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cardoso2022upperlimb": {
+      "id": "cardoso2022upperlimb",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cbc_fp_shortage": {
+      "id": "cbc_fp_shortage",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cbc_private_mri_debate": {
+      "id": "cbc_private_mri_debate",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "chilibeck2017": {
+      "id": "chilibeck2017",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "chiu2003": {
+      "id": "chiu2003",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cihi_mri": {
+      "id": "cihi_mri",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cihi_waits": {
+      "id": "cihi_waits",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cleveland_coccyx": {
+      "id": "cleveland_coccyx",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cleveland_lipoma": {
+      "id": "cleveland_lipoma",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cleveland_pilonidal": {
+      "id": "cleveland_pilonidal",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "coleman2024advanced": {
+      "id": "coleman2024advanced",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "conor-harris-pulldown": {
+      "id": "conor-harris-pulldown",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "contreras_thrust": {
+      "id": "contreras_thrust",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cook2016continuum": {
+      "id": "cook2016continuum",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cook_purdam2009": {
+      "id": "cook_purdam2009",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cook_purdam_2009": {
+      "id": "cook_purdam_2009",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "coombes2013steroid": {
+      "id": "coombes2013steroid",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "costcomeat": {
+      "id": "costcomeat",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "coyle2024": {
+      "id": "coyle2024",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cpo_directaccess": {
+      "id": "cpo_directaccess",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "cpso_virtualcare": {
+      "id": "cpso_virtualcare",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "craven2022": {
+      "id": "craven2022",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "dalfpr2026": {
+      "id": "dalfpr2026",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "damas-2018-damage": {
+      "id": "damas-2018-damage",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "debold2017metabolic": {
+      "id": "debold2017metabolic",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "delphi2023": {
+      "id": "delphi2023",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "deurenberg": {
+      "id": "deurenberg",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "drake2013": {
+      "id": "drake2013",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "duking2021": {
+      "id": "duking2021",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "e3rehab_golfers": {
+      "id": "e3rehab_golfers",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "e3rehab_knees": {
+      "id": "e3rehab_knees",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "e3rehab_lbp": {
+      "id": "e3rehab_lbp",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "e3rehab_pain": {
+      "id": "e3rehab_pain",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "e3rehab_prehab": {
+      "id": "e3rehab_prehab",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "e3rehab_triceps": {
+      "id": "e3rehab_triceps",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "enes2021restpause": {
+      "id": "enes2021restpause",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "epel": {
+      "id": "epel",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "fcc2026": {
+      "id": "fcc2026",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "fenwick-2009": {
+      "id": "fenwick-2009",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "fink2018restpause": {
+      "id": "fink2018restpause",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "fitnessvolt-fst7": {
+      "id": "fitnessvolt-fst7",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "flatt2017": {
+      "id": "flatt2017",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "freshcoflyer": {
+      "id": "freshcoflyer",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "garthe2011": {
+      "id": "garthe2011",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "gerling-2013": {
+      "id": "gerling-2013",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "gleeson2008": {
+      "id": "gleeson2008",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "grgic2017rest": {
+      "id": "grgic2017rest",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "grgic2018": {
+      "id": "grgic2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "grgic2020": {
+      "id": "grgic2020",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "hall2019": {
+      "id": "hall2019",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "halson2014": {
+      "id": "halson2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "happyscale": {
+      "id": "happyscale",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "hco_811": {
+      "id": "hco_811",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "hdemg-2025": {
+      "id": "hdemg-2025",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "healthcommons_wic": {
+      "id": "healthcommons_wic",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "heaselgrave-2019-biceps": {
+      "id": "heaselgrave-2019-biceps",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "helms": {
+      "id": "helms",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "helms2014": {
+      "id": "helms2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "helms2016": {
+      "id": "helms2016",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "helms2024_survey": {
+      "id": "helms2024_survey",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "helms_pyramid": {
+      "id": "helms_pyramid",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "helms_pyramid_nutrition": {
+      "id": "helms_pyramid_nutrition",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "herrington2011apt": {
+      "id": "herrington2011apt",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "hodgdon": {
+      "id": "hodgdon",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "hodges_motor_control": {
+      "id": "hodges_motor_control",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "holick2011": {
+      "id": "holick2011",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "holt1995": {
+      "id": "holt1995",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "hqo_er": {
+      "id": "hqo_er",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "hrv_sleep": {
+      "id": "hrv_sleep",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "iasp2020": {
+      "id": "iasp2020",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "jackson": {
+      "id": "jackson",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "jagim2018": {
+      "id": "jagim2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "jakeman2017": {
+      "id": "jakeman2017",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "jobe1991": {
+      "id": "jobe1991",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "johnshopkins_cubital": {
+      "id": "johnshopkins_cubital",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "johnshopkinsucl": {
+      "id": "johnshopkinsucl",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kassiano-2023": {
+      "id": "kassiano-2023",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kassiano-2023-rom": {
+      "id": "kassiano-2023-rom",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kassiano-elbow": {
+      "id": "kassiano-elbow",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kassiano2024rest": {
+      "id": "kassiano2024rest",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kilo_ff": {
+      "id": "kilo_ff",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kiviniemi2007": {
+      "id": "kiviniemi2007",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kiviniemi2010": {
+      "id": "kiviniemi2010",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "knufinke2018": {
+      "id": "knufinke2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kongsgaard2009": {
+      "id": "kongsgaard2009",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kreider2017": {
+      "id": "kreider2017",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "kuhn2009rc": {
+      "id": "kuhn2009rc",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "laird2014apt": {
+      "id": "laird2014apt",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lamon2021": {
+      "id": "lamon2021",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lancet2018_1": {
+      "id": "lancet2018_1",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lancet2018_2": {
+      "id": "lancet2018_2",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lancet_redflags": {
+      "id": "lancet_redflags",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lanhers2015": {
+      "id": "lanhers2015",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lastella2015": {
+      "id": "lastella2015",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lauersen2014": {
+      "id": "lauersen2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lauersen2018": {
+      "id": "lauersen2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lehman-2004": {
+      "id": "lehman-2004",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "leproult2011": {
+      "id": "leproult2011",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lethem1983fear": {
+      "id": "lethem1983fear",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "li2017": {
+      "id": "li2017",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "libra": {
+      "id": "libra",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "longland2016": {
+      "id": "longland2016",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lopez-2021-meta": {
+      "id": "lopez-2021-meta",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "lopez2013": {
+      "id": "lopez2013",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "maeo-2021": {
+      "id": "maeo-2021",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "maeo-2022-lengthened": {
+      "id": "maeo-2022-lengthened",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "maeo-2023": {
+      "id": "maeo-2023",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mah2011": {
+      "id": "mah2011",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "malliaras2015hsr": {
+      "id": "malliaras2015hsr",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "maple_pricing": {
+      "id": "maple_pricing",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mass": {
+      "id": "mass",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mass-hrv": {
+      "id": "mass-hrv",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mass-loads-2022": {
+      "id": "mass-loads-2022",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mass_pain": {
+      "id": "mass_pain",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mass_pullpush": {
+      "id": "mass_pullpush",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mass_rir": {
+      "id": "mass_rir",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "matador": {
+      "id": "matador",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "matthews2020eccentric": {
+      "id": "matthews2020eccentric",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mayo_pilonidal": {
+      "id": "mayo_pilonidal",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mayo_sebaceous": {
+      "id": "mayo_sebaceous",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mcgill2007": {
+      "id": "mcgill2007",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mcgill_back_mechanic": {
+      "id": "mcgill_back_mechanic",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mcgill_big3": {
+      "id": "mcgill_big3",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mcgill_carries": {
+      "id": "mcgill_carries",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mdpi-2025-pulldown": {
+      "id": "mdpi-2025-pulldown",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "mero2010": {
+      "id": "mero2010",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "moore2009": {
+      "id": "moore2009",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "morton-2019-effort": {
+      "id": "morton-2019-effort",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "morton2018": {
+      "id": "morton2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "moseley_explain_pain": {
+      "id": "moseley_explain_pain",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "muscleevo-fascial": {
+      "id": "muscleevo-fascial",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "natgeo": {
+      "id": "natgeo",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "nhs_pilonidal": {
+      "id": "nhs_pilonidal",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "nuckols-volume": {
+      "id": "nuckols-volume",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "ocfp_access": {
+      "id": "ocfp_access",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "ontario_physio_ohip": {
+      "id": "ontario_physio_ohip",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "ontariohealth_ihf": {
+      "id": "ontariohealth_ihf",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "orthoinfo_cubital": {
+      "id": "orthoinfo_cubital",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "osutendon": {
+      "id": "osutendon",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "park-2014": {
+      "id": "park-2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "paulsen2014": {
+      "id": "paulsen2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "peakphysio_triceps": {
+      "id": "peakphysio_triceps",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "pedrosa-2023": {
+      "id": "pedrosa-2023",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "pelland-2025-doseresp": {
+      "id": "pelland-2025-doseresp",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "peos2019": {
+      "id": "peos2019",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "phillips2014": {
+      "id": "phillips2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "physio_elbow_lig": {
+      "id": "physio_elbow_lig",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "physio_pricing_toronto": {
+      "id": "physio_pricing_toronto",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "physiopedia_medial": {
+      "id": "physiopedia_medial",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "physiotutors_hip": {
+      "id": "physiotutors_hip",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "pilz2011": {
+      "id": "pilz2011",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "plews2012": {
+      "id": "plews2012",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "plews2013": {
+      "id": "plews2013",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "pmc_fcu": {
+      "id": "pmc_fcu",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "pmc_isometric": {
+      "id": "pmc_isometric",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "pmc_ulnar_disloc": {
+      "id": "pmc_ulnar_disloc",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "polivyherman": {
+      "id": "polivyherman",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "pouliot": {
+      "id": "pouliot",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "pouliot1994": {
+      "id": "pouliot1994",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "radiopaedia_veo": {
+      "id": "radiopaedia_veo",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rambod-evogen": {
+      "id": "rambod-evogen",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rebello2016": {
+      "id": "rebello2016",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "refalo-2023-proximity": {
+      "id": "refalo-2023-proximity",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "refalo-2023-rir": {
+      "id": "refalo-2023-rir",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "refalo2023": {
+      "id": "refalo2023",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rio2015isometric": {
+      "id": "rio2015isometric",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rio2017infographic": {
+      "id": "rio2017infographic",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "roberts-2023-mps": {
+      "id": "roberts-2023-mps",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "robinson2024": {
+      "id": "robinson2024",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rolls2009": {
+      "id": "rolls2009",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "ronai-2015": {
+      "id": "ronai-2015",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rp-back": {
+      "id": "rp-back",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rp-landmarks": {
+      "id": "rp-landmarks",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rp-volume-landmarks": {
+      "id": "rp-volume-landmarks",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rp_book": {
+      "id": "rp_book",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rp_meso": {
+      "id": "rp_meso",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "rp_photos": {
+      "id": "rp_photos",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sahrmann_msi": {
+      "id": "sahrmann_msi",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "saner2020": {
+      "id": "saner2020",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "santanielo2024": {
+      "id": "santanielo2024",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs": {
+      "id": "sbs",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs-lengthened": {
+      "id": "sbs-lengthened",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs-rowing": {
+      "id": "sbs-rowing",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_effective": {
+      "id": "sbs_effective",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_grow": {
+      "id": "sbs_grow",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_pain": {
+      "id": "sbs_pain",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_rir": {
+      "id": "sbs_rir",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_shoulders": {
+      "id": "sbs_shoulders",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_sleep_workouts": {
+      "id": "sbs_sleep_workouts",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_sleeploss": {
+      "id": "sbs_sleeploss",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_taper": {
+      "id": "sbs_taper",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sbs_visual": {
+      "id": "sbs_visual",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld-2010-mechanisms": {
+      "id": "schoenfeld-2010-mechanisms",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld-2013-metab": {
+      "id": "schoenfeld-2013-metab",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld-2017-loads": {
+      "id": "schoenfeld-2017-loads",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld-2017-volume": {
+      "id": "schoenfeld-2017-volume",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld-2019-frequency": {
+      "id": "schoenfeld-2019-frequency",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld-2021-text": {
+      "id": "schoenfeld-2021-text",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld2013metabolic": {
+      "id": "schoenfeld2013metabolic",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld2016rest": {
+      "id": "schoenfeld2016rest",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "schoenfeld2018": {
+      "id": "schoenfeld2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "scott2020icon": {
+      "id": "scott2020icon",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "seated-row-grip-2023": {
+      "id": "seated-row-grip-2023",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "silbernagel2007": {
+      "id": "silbernagel2007",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "silbernagel2007pain": {
+      "id": "silbernagel2007pain",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "silbernagel2019": {
+      "id": "silbernagel2019",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "simplyshredded-fst7": {
+      "id": "simplyshredded-fst7",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "simpson2005": {
+      "id": "simpson2005",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "smith2011": {
+      "id": "smith2011",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "snijders2015": {
+      "id": "snijders2015",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "snyder-leech-2009": {
+      "id": "snyder-leech-2009",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "spiegel": {
+      "id": "spiegel",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "stanish1986": {
+      "id": "stanish1986",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "statcancpi": {
+      "id": "statcancpi",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "statpearls_coccyx": {
+      "id": "statpearls_coccyx",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "statpearls_medial": {
+      "id": "statpearls_medial",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "stewart2002": {
+      "id": "stewart2002",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "stonge": {
+      "id": "stonge",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "stubbs2000": {
+      "id": "stubbs2000",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "subjective_objective": {
+      "id": "subjective_objective",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "sun": {
+      "id": "sun",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "swinton2011": {
+      "id": "swinton2011",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "telus_mycare": {
+      "id": "telus_mycare",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "terra_hrv": {
+      "id": "terra_hrv",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "tomlinson2015": {
+      "id": "tomlinson2015",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "toronto_star_private_imaging": {
+      "id": "toronto_star_private_imaging",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "toronto_xray_walkin": {
+      "id": "toronto_xray_walkin",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "trendweighting": {
+      "id": "trendweighting",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "trexler2014": {
+      "id": "trexler2014",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "tyler2010": {
+      "id": "tyler2010",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "tyler2014flexbar": {
+      "id": "tyler2014flexbar",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "uoft_hwc": {
+      "id": "uoft_hwc",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "uptodate_epidermoid": {
+      "id": "uptodate_epidermoid",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "uptodate_pilonidal": {
+      "id": "uptodate_pilonidal",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "uptodate_softtissue": {
+      "id": "uptodate_softtissue",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "vandongen2003": {
+      "id": "vandongen2003",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "vanwingerden2012hipir": {
+      "id": "vanwingerden2012hipir",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "vesterinen2016": {
+      "id": "vesterinen2016",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "vigotsky-2018": {
+      "id": "vigotsky-2018",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "vlaeyen2000fa": {
+      "id": "vlaeyen2000fa",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "wackerhage-2019": {
+      "id": "wackerhage-2019",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "walker": {
+      "id": "walker",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "wang": {
+      "id": "wang",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "warneke2023stretch": {
+      "id": "warneke2023stretch",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "who_steps": {
+      "id": "who_steps",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "wolf-2023": {
+      "id": "wolf-2023",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "wolf-2023-rom": {
+      "id": "wolf-2023-rom",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "wolf-2025": {
+      "id": "wolf-2025",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "wolfe2017": {
+      "id": "wolfe2017",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    },
+    "zourdos2016": {
+      "id": "zourdos2016",
+      "tier": "T2",
+      "note": "salvaged stub \u2014 verify"
+    }
+  }
+}
