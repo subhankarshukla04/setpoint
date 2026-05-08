@@ -1,15 +1,105 @@
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html, body {
-  background: #0a0a0a; color: #fafafa;
+  background: #0E0E0C;
+  color: #F2F0EA;
+  font-feature-settings: "cv11", "ss03", "cv02";
   -webkit-font-smoothing: antialiased;
   overscroll-behavior-y: contain;
+  letter-spacing: -0.011em;
 }
+
 * { -webkit-tap-highlight-color: transparent; }
 
 @layer utilities {
   .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
   .safe-top    { padding-top:    env(safe-area-inset-top); }
+
+  .num    { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+  .mono   { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .display{ font-family: "Space Grotesk", Inter, system-ui, sans-serif; }
+
+  /* Industrial typographic registers */
+  .label       { text-transform: uppercase; letter-spacing: 0.14em; font-size: 10px; color: #7A7872; font-family: "JetBrains Mono", monospace; }
+  .label-fg    { text-transform: uppercase; letter-spacing: 0.14em; font-size: 10px; color: #F2F0EA; font-family: "JetBrains Mono", monospace; }
+  .industrial  { text-transform: uppercase; letter-spacing: 0.22em; font-family: "JetBrains Mono", monospace; }
+  .stencil     { font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: -0.035em; }
+  .display-num { font-family: "JetBrains Mono", monospace; font-weight: 800; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+
+  /* Off-White-coded hazard stripes */
+  .hazard {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #D9FF00 0,
+      #D9FF00 10px,
+      #0E0E0C 10px,
+      #0E0E0C 20px
+    );
+  }
+  .hazard-flag {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #FF3B1F 0,
+      #FF3B1F 10px,
+      #0E0E0C 10px,
+      #0E0E0C 20px
+    );
+  }
+
+  /* Quotation wrapper */
+  .qmark::before { content: "\201C"; color: #7A7872; margin-right: 0.15em; }
+  .qmark::after  { content: "\201D"; color: #7A7872; margin-left: 0.15em; }
+
+  /* Dashed margin rule like CAD drawings */
+  .rule-dash {
+    background-image: linear-gradient(to right, #2A2820 50%, transparent 0);
+    background-size: 6px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+  }
+
+  /* Stamp box (used for status, verdicts) */
+  .stamp {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid currentColor;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .stamp-tilt { transform: rotate(-2deg); }
+
+  /* Thermal-receipt zigzag bottom edge */
+  .receipt-edge {
+    --c: #15140F;
+    -webkit-mask:
+      linear-gradient(#000 0 0) top/100% calc(100% - 8px) no-repeat,
+      conic-gradient(from -45deg at 4px 4px, #000 90deg, #0000 0) 0 100%/8px 8px;
+            mask:
+      linear-gradient(#000 0 0) top/100% calc(100% - 8px) no-repeat,
+      conic-gradient(from -45deg at 4px 4px, #000 90deg, #0000 0) 0 100%/8px 8px;
+  }
+
+  /* Scanline subtle texture for terminal moments */
+  .scanlines {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.012) 0px,
+      rgba(255,255,255,0.012) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
 }
+
+::selection { background: rgba(217, 255, 0, 0.32); color: #0E0E0C; }
+
+/* Caret in branded yellow */
+input, textarea { caret-color: #D9FF00; }

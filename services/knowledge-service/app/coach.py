@@ -8,7 +8,7 @@ from openai import OpenAI
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 DEFAULT_MODEL = os.environ.get("OPENROUTER_COACH_MODEL", "google/gemini-2.0-flash-exp:free")
 
-SYSTEM_TEMPLATE = """You are CutTrack's coach for Subh — 22M, 6'2", 96 kg, on a 12-week cut in Toronto.
+SYSTEM_TEMPLATE = """You are Setpoint's coach for Subh — 22M, 6'2", 96 kg, on a 12-week cut in Toronto.
 
 You answer using the KB excerpts AND the user's live context below. If neither
 covers the question, say "the KB doesn't cover this" and suggest the closest
@@ -53,7 +53,7 @@ def coach_answer(question, chunks, model=None, user_context=""):
         messages=[{"role": "system", "content": system},
                   {"role": "user", "content": question}],
         temperature=0.2,
-        extra_headers={"HTTP-Referer": "http://localhost:3001", "X-Title": "CutTrack"},
+        extra_headers={"HTTP-Referer": "http://localhost:3001", "X-Title": "Setpoint"},
     )
     return {
         "answer": resp.choices[0].message.content,

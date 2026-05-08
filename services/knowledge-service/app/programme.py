@@ -604,6 +604,63 @@ def todays_workout(today: date) -> dict:
     return SPEC_PLAN[-1]
 
 
+# ── Workout templates (picker model) ──────────────────────────────────
+# Stable IDs decoupled from day-of-week. User picks one per day.
+_WORKOUT_ID_MAP = {
+    "Chest + Shoulders": "chest_shoulders",
+    "Back + Rear Delts": "back_rear_delts",
+    "Arms (antagonist supersets)": "arms",
+    "Legs + Abs": "legs_abs",
+    "Rest": "rest",
+}
+
+
+def _build_templates() -> list[dict]:
+    seen: set[str] = set()
+    out: list[dict] = []
+    for d in SPEC_PLAN:
+        wid = _WORKOUT_ID_MAP.get(d["workout"])
+        if wid is None or wid in seen:
+            continue
+        seen.add(wid)
+        out.append({
+            "id": wid,
+            "label": d["workout"],
+            "is_training": d["workout"] != "Rest",
+            "exercises": list(d.get("exercises", [])),
+            "notes": d.get("notes", ""),
+        })
+    return out
+
+
+WORKOUT_TEMPLATES_LIST = _build_templates()
+WORKOUT_TEMPLATES = {t["id"]: t for t in WORKOUT_TEMPLATES_LIST}
+
+# Fallback when user hasn't picked a workout for the day
+DEFAULT_DOW_WORKOUT_ID = {
+    0: "chest_shoulders", 1: "back_rear_delts", 2: "rest",
+    3: "arms", 4: "legs_abs", 5: "rest", 6: "rest",
+}
+
+
+def list_workout_templates() -> list[dict]:
+    return [
+        {"id": t["id"], "label": t["label"], "is_training": t["is_training"],
+         "notes": t.get("notes", ""), "exercise_count": len(t["exercises"])}
+        for t in WORKOUT_TEMPLATES_LIST
+    ]
+
+
+def _macros_for(template: dict, today: date) -> dict:
+    phase = current_phase(today)
+    is_train = template["is_training"]
+    kcal = phase["train_kcal"] if is_train else phase["rest_kcal"]
+    protein_g = phase["protein_g"]
+    fat_g = round(kcal * 0.25 / 9)
+    carb_g = max(0, round((kcal - protein_g * 4 - fat_g * 9) / 4))
+    return {"kcal": kcal, "protein_g": protein_g, "carb_g": carb_g, "fat_g": fat_g}
+
+
 # ── Pattern-based filter ──────────────────────────────────────────────
 _TIER_PRIORITY = {"drop": 4, "swap": 3, "reduce": 2, "cue": 1, "none": 0}
 
@@ -755,26 +812,52 @@ def hydrate_injuries(active_rows: list[dict]) -> list[dict]:
     return out
 
 
-def programme_today(today: date, active_injury_rows: list[dict] | None = None) -> dict:
-    macros = macros_for_today(today)
-    workout = dict(todays_workout(today))
-    workout["exercises"] = list(workout.get("exercises", []))
+def programme_today(today: date, active_injury_rows: list[dict] | None = None,
+                    workout_id: str | None = None) -> dict:
+    """Return the day-view, honoring the user's pick if given.
+
+    workout_id=None → user has not picked yet today (frontend shows picker).
+    workout_id set  → use that template (training/rest follows template).
+    """
+    user_picked = workout_id is not None
+    if not user_picked:
+        # No pick = show picker. Treat as rest macro-wise so kcal stays low
+        # until the user commits to training.
+        template_id = DEFAULT_DOW_WORKOUT_ID.get(today.weekday(), "rest")
+    else:
+        template_id = workout_id
+
+    template = WORKOUT_TEMPLATES.get(template_id) or WORKOUT_TEMPLATES["rest"]
+    is_train = template["is_training"]
+    macros = _macros_for(template, today)
+    phase = current_phase(today)
+
+    workout = {
+        "dow": today.weekday(),
+        "label": today.strftime("%a"),
+        "workout": template["label"],
+        "exercises": list(template["exercises"]),
+        "notes": template.get("notes", ""),
+    }
     injuries = hydrate_injuries(active_injury_rows or [])
     workout["exercises"] = apply_injury_filter(workout["exercises"], injuries)
-    pre_session = build_pre_session(workout, injuries)
-    warmup = _build_warmup_block(workout)
+    pre_session = build_pre_session(workout, injuries) if user_picked else None
+    warmup = _build_warmup_block(workout) if user_picked else None
     return {
         "date": today.isoformat(),
         "week_of_cut": week_of_cut(today),
         "weeks_remaining": max(0, (END_DATE - today).days // 7),
-        "phase": macros["phase"],
-        "day_type": macros["day_type"],
-        "is_training_day": macros["is_training_day"],
-        "targets": {k: macros[k] for k in ("kcal", "protein_g", "carb_g", "fat_g")},
+        "phase": phase["phase"],
+        "day_type": "training" if is_train else "rest",
+        "is_training_day": is_train,
+        "selected_workout_id": template["id"] if user_picked else None,
+        "user_picked": user_picked,
+        "targets": macros,
         "pre_session": pre_session,
         "warmup": warmup,
         "workout": workout,
         "injuries": injuries,
+        "templates": list_workout_templates(),
     }
 
 

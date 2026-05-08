@@ -73,6 +73,19 @@ export const getReview = () => jget<WeeklyReview>("/review");
 export const getProgrammeToday = () => jget<ProgrammeToday>("/programme/today");
 export const getProgrammeWeek = () => jget<ProgrammeWeek>("/programme/week");
 
+export const getWorkoutTemplates = () =>
+  jget<{ templates: WorkoutTemplate[] }>("/programme/templates");
+export const pickWorkout = (workout_id: string, day?: string) =>
+  jpost<ProgrammeToday>("/programme/pick", { workout_id, day });
+export const unpickWorkout = (day?: string) =>
+  fetch(`${API_BASE}/programme/pick${day ? `?day=${day}` : ""}`, {
+    method: "DELETE",
+  }).then((r) => r.json() as Promise<ProgrammeToday>);
+export const getRecentPicks = (limit = 14) =>
+  jget<{ picks: { day: string; workout_id: string; picked_at: string }[] }>(
+    `/programme/picks?limit=${limit}`,
+  );
+
 export const getInjuries = () => jget<{ injuries: InjuryEntry[] }>("/injuries");
 export const toggleInjury = (name: string, active: boolean, notes?: string) =>
   jpost<{ ok: boolean; name: string; active: boolean }>(`/injuries/${name}`, { active, notes });
@@ -186,14 +199,22 @@ export type ProgrammeWeek = {
   cardio?: CyclingForecast;
 };
 
+export type WorkoutTemplate = {
+  id: string; label: string; is_training: boolean;
+  notes: string; exercise_count: number;
+};
+
 export type ProgrammeToday = {
   date: string; week_of_cut: number; weeks_remaining: number;
   phase: number; day_type: "training" | "rest"; is_training_day: boolean;
+  selected_workout_id: string | null;
+  user_picked: boolean;
   targets: { kcal: number; protein_g: number; carb_g: number; fat_g: number };
   pre_session: PreSession | null;
   warmup: PreSession | null;
   workout: ProgrammeWorkout;
   injuries: ProgrammeInjury[];
+  templates: WorkoutTemplate[];
   cardio?: {
     available: boolean;
     today_window: CyclingWindow | null;

@@ -31,52 +31,53 @@ export default function ReadinessLogger() {
     const res = await postOrQueue<{ score: ReadinessScore }>("/readiness", payload);
     if (res.ok && res.data) setScore(res.data.score);
     setStatus(res.ok ? "saved" : "queued");
-    setTimeout(() => setStatus(""), 1200);
+    setTimeout(() => setStatus(""), 1400);
   }
 
-  const dot = score?.level === "red" ? "bg-bad" : score?.level === "amber" ? "bg-warn" : "bg-accent";
+  const dotColor = score?.level === "red" ? "bg-flag" : score?.level === "amber" ? "bg-caution" : "bg-mark";
   return (
-    <div className="space-y-3">
-      <div className="bg-card rounded-2xl p-4">
-        <div className="flex items-center gap-2">
-          <span className={`w-2.5 h-2.5 rounded-full ${dot}`} />
-          <p className="text-xs uppercase tracking-wide text-muted">Readiness</p>
+    <div className="space-y-4">
+      <div className="border border-line p-4">
+        <div className="flex items-center justify-between">
+          <p className="industrial text-[10px] text-muted">// READINESS · SCORE</p>
+          <span className={`w-2 h-2 ${dotColor}`} />
         </div>
-        <p className="text-2xl font-semibold capitalize mt-1">{score?.level ?? "—"}</p>
-        <p className="text-xs text-muted mt-1">{score?.reason ?? "—"}</p>
-        {score?.rule && <p className="text-xs text-fg/80 mt-1">→ {score.rule}</p>}
+        <p className="display stencil text-[44px] uppercase mt-2 leading-none text-fg">{score?.level ?? "—"}</p>
+        <p className="mono text-[10px] tracking-[0.14em] text-muted mt-2 leading-relaxed">{score?.reason ?? "// NO DATA"}</p>
+        {score?.rule && <p className="text-[12px] text-fg/85 mt-1.5 italic">"{score.rule}"</p>}
       </div>
 
       <label className="block">
-        <span className="text-xs text-muted">Sleep last night (h)</span>
+        <span className="industrial text-[9px] text-muted">// SLEEP / HOURS</span>
         <input inputMode="decimal" value={sleep} onChange={(e) => setSleep(e.target.value)}
           placeholder="7.5"
-          className="mt-1 w-full bg-card rounded-xl px-4 py-3 outline-none border border-transparent focus:border-line text-lg" />
+          className="mt-1 w-full bg-card border border-line px-4 py-3 outline-none focus:border-mark display-num text-[22px] num" />
       </label>
 
       <div>
-        <p className="text-xs text-muted mb-2">Soreness (1 none → 10 severe)</p>
+        <p className="industrial text-[9px] text-muted mb-1.5">// SORENESS · 1 NONE → 10 SEVERE</p>
         <div className="grid grid-cols-10 gap-1">
           {[1,2,3,4,5,6,7,8,9,10].map((n) => (
             <button key={n} onClick={() => setSore(n)}
-              className={`py-2 rounded-md text-xs ${sore === n ? "bg-fg text-bg" : "bg-card text-muted"}`}>{n}</button>
+              className={`py-2.5 mono text-[12px] border ${sore === n ? "bg-fg text-ink border-fg" : "bg-card text-muted border-line"}`}>{n}</button>
           ))}
         </div>
       </div>
 
       <label className="block">
-        <span className="text-xs text-muted">HRV rMSSD (optional)</span>
+        <span className="industrial text-[9px] text-muted">// HRV rMSSD · OPTIONAL</span>
         <input inputMode="decimal" value={hrv} onChange={(e) => setHrv(e.target.value)}
           placeholder="55"
-          className="mt-1 w-full bg-card rounded-xl px-4 py-3 outline-none border border-transparent focus:border-line text-lg" />
+          className="mt-1 w-full bg-card border border-line px-4 py-3 outline-none focus:border-mark display-num text-[22px] num" />
       </label>
 
-      <button onClick={submit} className="w-full bg-accent text-bg font-semibold rounded-xl py-4 text-base">
-        {status === "saved" ? "Saved ✓" : status === "queued" ? "Queued (offline)" : (today ? "Update" : "Log readiness")}
+      <button onClick={submit}
+        className="w-full bg-fg text-ink mono font-bold tracking-[0.18em] uppercase py-4 text-[13px] hover:bg-mark transition-colors">
+        {status === "saved" ? "▸ LOGGED ✓" : status === "queued" ? "▸ QUEUED · OFFLINE" : (today ? "▸ UPDATE READINESS" : "▸ COMMIT READINESS")}
       </button>
 
-      <p className="text-xs text-muted text-center">
-        Rules from <span className="text-fg">sleep_performance_elasticity</span>: 2+ nights &gt;1h below 14d median → red.
+      <p className="text-[11px] text-muted text-center italic">
+        "Rules from <span className="text-fg not-italic">sleep_performance_elasticity</span>: 2+ nights &gt;1h below 14d median → red."
       </p>
     </div>
   );

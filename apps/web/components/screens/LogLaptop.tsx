@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { Dumbbell, Apple, Scale, Heart } from "lucide-react";
 import SetLogger from "../loggers/SetLogger";
 import MealLogger from "../loggers/MealLogger";
 import WeightLogger from "../loggers/WeightLogger";
@@ -8,34 +7,39 @@ import ReadinessLogger from "../loggers/ReadinessLogger";
 
 type Tab = "set" | "meal" | "weight" | "ready";
 
+const TABS: { id: Tab; code: string; label: string }[] = [
+  { id: "set",    code: "01", label: "SET" },
+  { id: "meal",   code: "02", label: "MEAL" },
+  { id: "weight", code: "03", label: "MASS" },
+  { id: "ready",  code: "04", label: "READY" },
+];
+
 export default function LogLaptop() {
   const [tab, setTab] = useState<Tab>("set");
   return (
     <div className="max-w-2xl space-y-6">
-      <header>
-        <h2 className="text-2xl font-semibold">Log</h2>
-        <p className="text-sm text-muted">Set / meal / weight — same shortcuts as the phone, just bigger.</p>
+      <header className="border-b border-line pb-5">
+        <p className="industrial text-[10px] text-muted">FILE / INPUT</p>
+        <h2 className="display stencil text-[60px] leading-[0.92] text-fg mt-2">INPUT.</h2>
+        <p className="mono text-[11px] tracking-[0.14em] text-muted mt-3">"COMMIT THE SET. THE NUMBER IS THE PRODUCT."</p>
       </header>
-      <div className="grid grid-cols-4 gap-2 bg-card rounded-2xl p-1">
-        <P id="set" cur={tab} onClick={setTab} icon={<Dumbbell size={16} />}>Set</P>
-        <P id="meal" cur={tab} onClick={setTab} icon={<Apple size={16} />}>Meal</P>
-        <P id="weight" cur={tab} onClick={setTab} icon={<Scale size={16} />}>Weight</P>
-        <P id="ready" cur={tab} onClick={setTab} icon={<Heart size={16} />}>Readiness</P>
+      <div className="grid grid-cols-4 border border-line">
+        {TABS.map(({ id, code, label }) => {
+          const active = tab === id;
+          return (
+            <button key={id} onClick={() => setTab(id)}
+              className={`relative py-3 flex flex-col items-center gap-1 border-r last:border-r-0 border-line transition-colors
+                ${active ? "bg-mark text-ink" : "text-muted hover:text-fg hover:bg-card2"}`}>
+              <span className={`mono text-[9px] tracking-[0.2em] ${active ? "text-ink/70" : "text-line2"}`}>{code}</span>
+              <span className="mono text-[11px] tracking-[0.18em]">{label}</span>
+            </button>
+          );
+        })}
       </div>
       {tab === "set" && <SetLogger />}
       {tab === "meal" && <MealLogger />}
       {tab === "weight" && <WeightLogger />}
       {tab === "ready" && <ReadinessLogger />}
     </div>
-  );
-}
-
-function P({ id, cur, onClick, icon, children }: { id: Tab; cur: Tab; onClick: (id: Tab) => void; icon: React.ReactNode; children: React.ReactNode }) {
-  const active = cur === id;
-  return (
-    <button onClick={() => onClick(id)}
-      className={`flex items-center justify-center gap-1.5 py-2 rounded-xl text-sm ${active ? "bg-fg text-bg" : "text-muted"}`}>
-      {icon}{children}
-    </button>
   );
 }

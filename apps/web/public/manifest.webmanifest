@@ -1,6 +1,6 @@
 {
-  "name": "CutTrack",
-  "short_name": "CutTrack",
+  "name": "Setpoint",
+  "short_name": "Setpoint",
   "description": "Personal training, nutrition, and recovery.",
   "start_url": "/",
   "display": "standalone",

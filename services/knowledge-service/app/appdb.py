@@ -64,6 +64,12 @@ CREATE TABLE IF NOT EXISTS readiness (
     notes TEXT,
     logged_at TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS day_choices (
+    day TEXT PRIMARY KEY,
+    workout_id TEXT NOT NULL,
+    picked_at TEXT NOT NULL
+);
 """
 
 
@@ -230,6 +236,29 @@ class AppStore:
             (name, 1 if active else 0, since, notes, ts),
         )
         self.conn.commit()
+
+    # ── day choices (workout picker) ─────────────────────────────────
+    def get_day_choice(self, day: str) -> str | None:
+        r = self.conn.execute(
+            "SELECT workout_id FROM day_choices WHERE day = ?", (day,)).fetchone()
+        return r["workout_id"] if r else None
+
+    def set_day_choice(self, day: str, workout_id: str, picked_at: str):
+        self.conn.execute(
+            """INSERT INTO day_choices (day, workout_id, picked_at) VALUES (?, ?, ?)
+               ON CONFLICT(day) DO UPDATE SET
+                  workout_id=excluded.workout_id, picked_at=excluded.picked_at""",
+            (day, workout_id, picked_at),
+        )
+        self.conn.commit()
+
+    def clear_day_choice(self, day: str):
+        self.conn.execute("DELETE FROM day_choices WHERE day = ?", (day,))
+        self.conn.commit()
+
+    def recent_day_choices(self, limit: int = 14):
+        return [dict(r) for r in self.conn.execute(
+            "SELECT * FROM day_choices ORDER BY day DESC LIMIT ?", (limit,)).fetchall()]
 
     # ── readiness ─────────────────────────────────────────────────────
     def log_readiness(self, day, sleep_hours, soreness, hrv_rmssd, notes, logged_at):

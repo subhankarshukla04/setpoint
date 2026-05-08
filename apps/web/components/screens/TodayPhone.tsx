@@ -6,6 +6,9 @@ import {
 } from "@/lib/api";
 import PreSessionCard from "../PreSessionCard";
 import CyclingCard from "../CyclingCard";
+import WorkoutPicker from "../WorkoutPicker";
+import { Pill, Dot } from "../Pill";
+import { HazardStrip } from "../HazardStrip";
 
 export default function TodayPhone() {
   const [day, setDay] = useState<DaySummary | null>(null);
@@ -26,75 +29,105 @@ export default function TodayPhone() {
 
   const m = day?.macros;
   const t = prog?.targets;
-  const dot = ready?.level === "red" ? "bg-bad" : ready?.level === "amber" ? "bg-warn" : "bg-accent";
-  const dayBadge = prog?.is_training_day ? "bg-accent/15 text-accent" : "bg-warn/15 text-warn";
+  const tone: "accent" | "warn" | "bad" =
+    ready?.level === "red" ? "bad" : ready?.level === "amber" ? "warn" : "accent";
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
+      {prog && prog.injuries.length > 0 && (
+        <HazardStrip tone="flag" label={`// ACTIVE CONSTRAINT — N=${prog.injuries.length}`} />
+      )}
+
+      {/* Hero EMA */}
+      <section className="border border-line p-4">
+        <p className="industrial text-[9px] text-muted">MASS / 14D EMA</p>
+        <div className="flex items-end gap-2 mt-2">
+          <span className="display-num text-[64px] leading-[0.85] text-fg">
+            {ema?.ema != null ? ema.ema.toFixed(1) : "—"}
+          </span>
+          <span className="mono text-[11px] text-muted pb-1.5">KG</span>
+        </div>
+        <p className="mono text-[10px] tracking-[0.14em] text-muted mt-2 num">
+          ↳ TODAY {ema?.current != null ? `${ema.current.toFixed(1)} KG` : "—"} · N={ema?.n ?? 0}
+        </p>
+      </section>
+
+      {/* Readiness */}
+      <section className="border border-line p-4">
+        <div className="flex items-center justify-between">
+          <p className="industrial text-[9px] text-muted">READINESS</p>
+          <Dot tone={tone} />
+        </div>
+        <p className="display stencil text-[34px] uppercase mt-1 leading-none text-fg">{ready?.level ?? "—"}</p>
+        <p className="mono text-[10px] tracking-[0.12em] text-muted mt-2 leading-relaxed">{ready?.reason ?? "// LOG ON INPUT → READY"}</p>
+        {ready?.rule && <p className="text-[11.5px] text-fg/85 italic mt-1.5">"{ready.rule}"</p>}
+      </section>
+
+      {/* Session ribbon */}
       {prog && (
-        <section className="bg-card rounded-2xl p-4">
+        <section className="border border-line p-4">
           <div className="flex items-center justify-between">
-            <p className="text-sm font-medium">{prog.workout.workout}</p>
-            <span className={`text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wide ${dayBadge}`}>
-              {prog.day_type}
-            </span>
+            <p className="industrial text-[9px] text-fg">{prog.user_picked ? "// LOCKED" : "// UNSET"}</p>
+            <Pill tone={prog.is_training_day ? "accent" : "warn"}>{prog.day_type}</Pill>
           </div>
-          <p className="text-xs text-muted mt-1">
-            Phase {prog.phase} · wk {prog.week_of_cut}/12 · target {t?.kcal} kcal · {t?.protein_g}g P
+          <p className="text-[14px] font-semibold tracking-tightish mt-1.5">
+            {prog.user_picked ? prog.workout.workout : "NO SESSION PICKED"}
           </p>
-          {prog.injuries.length > 0 && (
-            <p className="text-xs text-bad mt-2">⚠ {prog.injuries[0].rule}</p>
-          )}
+          <p className="mono text-[10px] tracking-[0.14em] text-muted mt-1 num">
+            PHASE {prog.phase} · WK {String(prog.week_of_cut).padStart(2, "0")}/12 · {t?.kcal} KCAL · {t?.protein_g}P
+          </p>
         </section>
       )}
 
-      {prog?.pre_session && <PreSessionCard pre={prog.pre_session} />}
-      {prog?.warmup && <PreSessionCard pre={prog.warmup} />}
+      {prog && (
+        <WorkoutPicker
+          templates={prog.templates}
+          selectedId={prog.selected_workout_id}
+          onUpdate={setProg}
+        />
+      )}
+
+      {prog?.user_picked && prog.pre_session && <PreSessionCard pre={prog.pre_session} />}
+      {prog?.user_picked && prog.warmup && <PreSessionCard pre={prog.warmup} />}
       {prog?.cardio && (
         <CyclingCard todayWindow={prog.cardio.today_window} nextBest={prog.cardio.next_best} compact />
       )}
 
-      <section className="bg-card rounded-2xl p-4">
-        <div className="flex items-center gap-2">
-          <span className={`w-2.5 h-2.5 rounded-full ${dot}`} />
-          <p className="text-xs uppercase tracking-wide text-muted">Readiness</p>
+      {/* Macro spec */}
+      <section className="border border-line p-4">
+        <p className="industrial text-[9px] text-muted">MACROS</p>
+        <div className="mt-3 space-y-2.5">
+          <Bar label="P" v={m?.protein_g ?? 0} t={t?.protein_g ?? 170} />
+          <Bar label="C" v={m?.carb_g ?? 0} t={t?.carb_g ?? 220} />
+          <Bar label="F" v={m?.fat_g ?? 0} t={t?.fat_g ?? 55} />
         </div>
-        <p className="text-2xl font-semibold capitalize mt-1">{ready?.level ?? "—"}</p>
-        <p className="text-xs text-muted mt-1">{ready?.reason ?? "log on the Log → Ready tab"}</p>
-        {ready?.rule && <p className="text-xs text-fg/80 mt-1">→ {ready.rule}</p>}
-      </section>
-
-      <section className="bg-card rounded-2xl p-4">
-        <p className="text-xs uppercase tracking-wide text-muted">Weight (14d EMA)</p>
-        <p className="text-2xl font-semibold mt-1">{ema?.ema != null ? `${ema.ema.toFixed(1)} kg` : "—"}</p>
-        <p className="text-xs text-muted mt-1">
-          {ema?.current != null ? `today ${ema.current.toFixed(1)} kg · ${ema.n} entries` : "log your morning weight"}
-        </p>
-      </section>
-
-      <section className="bg-card rounded-2xl p-4">
-        <p className="text-xs uppercase tracking-wide text-muted mb-2">Macros</p>
-        <Bar label="Protein" v={m?.protein_g ?? 0} t={t?.protein_g ?? 170} />
-        <Bar label="Carbs" v={m?.carb_g ?? 0} t={t?.carb_g ?? 220} />
-        <Bar label="Fat" v={m?.fat_g ?? 0} t={t?.fat_g ?? 55} />
-        <div className="mt-3 flex justify-between text-sm">
-          <span className="text-muted">kcal</span>
-          <span>{(m?.kcal ?? 0).toFixed(0)} / {t?.kcal ?? "—"}</span>
+        <div className="mt-3 flex justify-between mono text-[11px] tracking-[0.14em] border-t border-line pt-2 num">
+          <span className="text-muted">KCAL</span>
+          <span className="text-fg">{(m?.kcal ?? 0).toFixed(0)} / {t?.kcal ?? "—"}</span>
         </div>
       </section>
 
-      <section className="bg-card rounded-2xl p-4">
-        <p className="text-xs uppercase tracking-wide text-muted mb-2">Today's sets ({day?.sets.length ?? 0})</p>
+      {/* Recent sets */}
+      <section className="border border-line">
+        <header className="px-4 py-2.5 border-b border-line flex items-baseline justify-between">
+          <span className="industrial text-[9px] text-fg">// SETS · TODAY</span>
+          <span className="mono text-[9px] text-muted tracking-[0.16em] num">N={String(day?.sets.length ?? 0).padStart(2, "0")}</span>
+        </header>
         {day && day.sets.length > 0 ? (
-          <ul className="space-y-1 text-sm">
-            {day.sets.slice(-5).map((s) => (
-              <li key={s.id} className="flex justify-between">
-                <span>{s.exercise}</span>
-                <span className="text-muted">{s.weight_kg}×{s.reps}{s.rir != null ? ` · RIR ${s.rir}` : ""}</span>
+          <ul className="divide-y divide-line">
+            {day.sets.slice(-5).map((s, i) => (
+              <li key={s.id} className="px-4 py-2 flex justify-between gap-3 text-[13px]">
+                <span className="flex items-baseline gap-2 min-w-0">
+                  <span className="mono text-[9px] text-line2 tracking-[0.18em]">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="truncate tracking-tightish">{s.exercise}</span>
+                </span>
+                <span className="text-muted text-[11px] num self-center">
+                  {s.weight_kg}×{s.reps}{s.rir != null ? ` · R${s.rir}` : ""}
+                </span>
               </li>
             ))}
           </ul>
-        ) : <p className="text-sm text-muted">No sets logged yet.</p>}
+        ) : <p className="text-[12px] text-muted italic px-4 py-3">// NO SETS YET</p>}
       </section>
     </div>
   );
@@ -103,13 +136,13 @@ export default function TodayPhone() {
 function Bar({ label, v, t }: { label: string; v: number; t: number }) {
   const pct = Math.min(100, (v / t) * 100);
   return (
-    <div className="mb-2">
-      <div className="flex justify-between text-sm mb-1">
+    <div>
+      <div className="flex justify-between mono text-[10px] tracking-[0.14em] mb-1 num">
         <span className="text-muted">{label}</span>
-        <span>{v.toFixed(0)} / {t}g</span>
+        <span className="text-fg">{v.toFixed(0)} / {t}G</span>
       </div>
-      <div className="h-1.5 rounded-full bg-line overflow-hidden">
-        <div className="h-full bg-accent" style={{ width: `${pct}%` }} />
+      <div className="h-px bg-line">
+        <div className="h-full bg-mark" style={{ width: `${pct}%` }} />
       </div>
     </div>
   );

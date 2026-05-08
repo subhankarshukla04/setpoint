@@ -19,6 +19,7 @@ from .ingest import ingest_wiki
 from .programme import (
     programme_today, programme_week, current_phase, is_training_day,
     catalog_summary, catalog_actions, INJURY_CATALOG,
+    list_workout_templates, WORKOUT_TEMPLATES,
 )
 from .weather import cycling_suggestions
 
@@ -49,7 +50,7 @@ async def lifespan(app: FastAPI):
     if app_store: app_store.close()
 
 
-app = FastAPI(title="cutrack-services", lifespan=lifespan)
+app = FastAPI(title="setpoint-services", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
@@ -121,7 +122,8 @@ def _user_context() -> str:
     if not app_store: return ""
     today_str = _today()
     today_d = date.today()
-    prog = programme_today(today_d, app_store.active_injuries())
+    prog = programme_today(today_d, app_store.active_injuries(),
+                           workout_id=app_store.get_day_choice(today_str))
     macros = app_store.macros_for_day(today_str)
     sets = app_store.sets_for_day(today_str)
     ema = app_store.weight_ewma()
@@ -314,9 +316,10 @@ def weekly_review():
 @app.get("/programme/today")
 def programme_today_endpoint():
     if not app_store: raise HTTPException(503, "app not ready")
-    out = programme_today(date.today(), app_store.active_injuries())
+    today_iso = _today()
+    out = programme_today(date.today(), app_store.active_injuries(),
+                          workout_id=app_store.get_day_choice(today_iso))
     cyc = cycling_suggestions()
-    today_iso = date.today().isoformat()
     out["cardio"] = {
         "available": cyc.get("available", False),
         "today_window": next((w for w in cyc.get("windows", [])
@@ -337,6 +340,45 @@ def programme_week_endpoint():
 @app.get("/weather/cycling")
 def weather_cycling():
     return cycling_suggestions()
+
+
+# ── Workout picker ──────────────────────────────────────────────────
+class PickIn(BaseModel):
+    workout_id: str
+    day: str | None = None
+
+
+@app.get("/programme/templates")
+def programme_templates():
+    return {"templates": list_workout_templates()}
+
+
+@app.post("/programme/pick")
+def programme_pick(req: PickIn):
+    if not app_store: raise HTTPException(503, "app not ready")
+    if req.workout_id not in WORKOUT_TEMPLATES:
+        raise HTTPException(400, f"unknown workout_id '{req.workout_id}'. choose from {list(WORKOUT_TEMPLATES.keys())}")
+    day = req.day or _today()
+    app_store.set_day_choice(day, req.workout_id, _now())
+    if day == _today():
+        return programme_today_endpoint()
+    return {"ok": True, "day": day, "workout_id": req.workout_id}
+
+
+@app.delete("/programme/pick")
+def programme_unpick(day: str | None = None):
+    if not app_store: raise HTTPException(503, "app not ready")
+    target = day or _today()
+    app_store.clear_day_choice(target)
+    if target == _today():
+        return programme_today_endpoint()
+    return {"ok": True, "day": target}
+
+
+@app.get("/programme/picks")
+def programme_picks(limit: int = 14):
+    if not app_store: raise HTTPException(503, "app not ready")
+    return {"picks": app_store.recent_day_choices(limit=limit)}
 
 
 @app.post("/programme/reseed")

@@ -17,30 +17,35 @@ export default function WeightLogger() {
     if (res.ok && res.data) setEma(res.data.ema);
     setStatus(res.ok ? "saved" : "queued");
     setW("");
-    setTimeout(() => setStatus(""), 1200);
+    setTimeout(() => setStatus(""), 1400);
   }
 
   return (
-    <div className="space-y-3">
-      <div className="bg-card rounded-2xl p-4">
-        <p className="text-xs uppercase tracking-wide text-muted">14d EMA</p>
-        <p className="text-3xl font-semibold mt-1">{ema?.ema != null ? `${ema.ema.toFixed(2)} kg` : "—"}</p>
-        <p className="text-xs text-muted mt-1">{ema?.n ?? 0} entries · last {ema?.last_day ?? "never"}</p>
+    <div className="space-y-4">
+      <div className="border border-line p-4">
+        <p className="industrial text-[10px] text-muted">// 14D EMA</p>
+        <p className="display-num text-[56px] leading-none mt-2 text-fg num">
+          {ema?.ema != null ? ema.ema.toFixed(2) : "—"}
+          <span className="mono text-[14px] text-muted ml-2">KG</span>
+        </p>
+        <p className="mono text-[10px] tracking-[0.14em] text-muted mt-2 num uppercase">
+          ↳ N={ema?.n ?? 0} · LAST {ema?.last_day ?? "NEVER"}
+        </p>
       </div>
 
       <label className="block">
-        <span className="text-xs text-muted">This morning (kg)</span>
+        <span className="industrial text-[9px] text-muted">// THIS MORNING / KG</span>
         <input inputMode="decimal" value={w} onChange={(e) => setW(e.target.value)} placeholder="95.4"
-          className="mt-1 w-full bg-card rounded-xl px-4 py-3 outline-none border border-transparent focus:border-line text-2xl" />
+          className="mt-1 w-full bg-card border border-line px-4 py-3 outline-none focus:border-mark display-num text-[28px] num" />
       </label>
 
-      <button onClick={submit} className="w-full bg-accent text-bg font-semibold rounded-xl py-4 text-base">
-        {status === "saved" ? "Saved ✓" : status === "queued" ? "Queued (offline)" : "Log weight"}
+      <button onClick={submit}
+        className="w-full bg-fg text-ink mono font-bold tracking-[0.18em] uppercase py-4 text-[13px] hover:bg-mark transition-colors">
+        {status === "saved" ? "▸ LOGGED ✓" : status === "queued" ? "▸ QUEUED · OFFLINE" : "▸ COMMIT MASS"}
       </button>
 
-      <p className="text-xs text-muted text-center">
-        Weigh fasted, post-void, same scale. The EMA absorbs daily noise — see KB
-        article <span className="text-fg">trend_weighting_scale_weight</span>.
+      <p className="text-[11px] text-muted leading-relaxed italic">
+        "Fasted, post-void, same scale. The EMA absorbs daily noise — see KB <span className="text-fg not-italic">trend_weighting_scale_weight</span>."
       </p>
     </div>
   );
