@@ -1,9 +1,8 @@
 # Setpoint
 
 > *The weight your body defends. The target state of a control system. The thing a 12-week cut is trying to relocate.*
-> Personal AI training, nutrition & recovery system. Built for one user, anatomically grounded, research-cited, runs on a laptop and a phone.
+> Personal training, nutrition & recovery system. Built for one user, anatomically grounded, research-cited, runs on a laptop and a phone.
 
-[![Built with Claude](https://img.shields.io/badge/Built%20with-Claude%20Opus-D97757?logo=anthropic&logoColor=white)](https://www.anthropic.com)
 [![Stack](https://img.shields.io/badge/stack-FastAPI%20·%20Next.js%2014%20·%20SQLite-0a0a0a)](#stack)
 [![Hosting](https://img.shields.io/badge/hosting-laptop%20%2B%20phone%20over%20WiFi-22c55e)](#architecture)
 [![Cost](https://img.shields.io/badge/cost-%240%2Fmo-22c55e)](#architecture)
@@ -41,19 +40,6 @@ Three intertwined personalisation problems that no consumer app solves at once:
 **3. Grounded reasoning.** When the coach answers "should I deload?", it should cite specific passages from a curated wiki of training/nutrition/recovery research, not hallucinate from training-data memory.
 
 Every consumer app I tried solves zero of these. Setpoint solves all three.
-
----
-
-## How I used Claude
-
-A 5-sprint build (KB → app shell → logging → coach + plan → readiness/review) compressed into a few sessions. Claude was the architect, the implementer, and the second brain on every design call:
-
-- **Architectural iteration.** I started wanting Supabase + cloud hosting; Claude pushed back ("$0 cost + can't keep laptop on 24/7 = host nothing") and we landed on the laptop-as-server / phone-as-client design that's now the system's spine.
-- **Anatomy review.** The first injury catalog over-generalised and swapped my biceps when only triceps needed swapping. I told Claude "biceps stay alone" and it rewrote the catalog from anatomy first: medial epicondyle = flexor-pronator origin, biceps brachii inserts at radial tuberosity, therefore curls are unaffected. That conversation produced the 25 movement-pattern tags that now drive the whole filter.
-- **Research synthesis.** The warmup blocks aren't generic — Claude pulled the references (Behm, Bishop, Wilson, Cools/Reinold, Contreras, Spina, Israetel/Nippard); I made the call on what to include.
-- **Recovery from a sandbox catastrophe.** Mid-build, work was being silently written to a shell sandbox overlay that didn't persist. We caught it, salvaged 27 wiki articles by HTTP-dumping the running backend, rebuilt on the real disk, shipped.
-
-This is what AI-assisted engineering actually looks like in 2026: not "AI writes my code," but a tight loop of architectural conversations, anatomically correct constraints, cited rationale, and fast iteration — with me staying the decision-maker.
 
 ---
 
